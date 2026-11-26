@@ -2,9 +2,9 @@ import math
 
 import pytest
 
-from app.core.errors import DomainError
-from app.domain.expected_goals import ExpectedGoals
-from app.domain.scoreline_model import build_scoreline_table, poisson_pmf
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.expected_goals import ExpectedGoals
+from bet_researcher.domain.scoreline_model import build_scoreline_table, poisson_pmf
 
 pytestmark = pytest.mark.unit
 

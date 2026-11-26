@@ -1,7 +1,7 @@
 import pytest
 
-from app.core.errors import DomainError
-from app.domain.odds import (
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.odds import (
     ValueVerdict,
     bookmaker_margin,
     expected_return,

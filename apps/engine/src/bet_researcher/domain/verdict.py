@@ -3,7 +3,7 @@
 from dataclasses import dataclass
 from enum import StrEnum
 
-from app.core.errors import DomainError
+from bet_researcher.core.errors import DomainError
 
 
 class VerdictLabel(StrEnum):

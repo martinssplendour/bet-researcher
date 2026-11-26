@@ -10,9 +10,9 @@ from typing import Literal
 from pydantic import SecretStr, ValidationError, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from app.core.errors import ConfigurationError
+from bet_researcher.core.errors import ConfigurationError
 
-REPO_ROOT = Path(__file__).resolve().parents[4]
+REPO_ROOT = Path(__file__).resolve().parents[5]
 DEFAULT_ENV_FILE = REPO_ROOT / ".env"
 DEFAULT_DATABASE_URL = "sqlite:///./bet_researcher.db"
 DEFAULT_API_FOOTBALL_BASE_URL = "https://v3.football.api-sports.io"

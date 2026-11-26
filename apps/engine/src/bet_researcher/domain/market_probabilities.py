@@ -3,9 +3,9 @@
 import math
 from collections.abc import Sequence
 
-from app.core.errors import DomainError
-from app.domain.scoreline_model import ScorelineTable
-from app.domain.selections import Selection
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.scoreline_model import ScorelineTable
+from bet_researcher.domain.selections import Selection
 
 
 def selection_probability(table: ScorelineTable, selection: Selection) -> float:

@@ -4,7 +4,7 @@ import math
 from collections.abc import Sequence
 from enum import StrEnum
 
-from app.core.errors import DomainError
+from bet_researcher.core.errors import DomainError
 
 DEFAULT_VALUE_TOLERANCE = 0.02
 

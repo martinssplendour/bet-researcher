@@ -9,8 +9,8 @@ import math
 from collections.abc import Iterator
 from dataclasses import dataclass
 
-from app.core.errors import DomainError
-from app.domain.expected_goals import ExpectedGoals
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.expected_goals import ExpectedGoals
 
 DEFAULT_MAX_GOALS = 10
 DEFAULT_TOP_SCORELINES = 5

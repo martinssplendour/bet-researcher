@@ -4,7 +4,7 @@ import math
 from collections.abc import Sequence
 from dataclasses import dataclass
 
-from app.core.errors import DomainError
+from bet_researcher.core.errors import DomainError
 
 
 @dataclass(frozen=True, slots=True)

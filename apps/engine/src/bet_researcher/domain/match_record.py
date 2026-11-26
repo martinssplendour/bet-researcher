@@ -3,7 +3,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 
-from app.core.errors import DomainError
+from bet_researcher.core.errors import DomainError
 
 
 def require_timezone(moment: datetime, what: str) -> None:

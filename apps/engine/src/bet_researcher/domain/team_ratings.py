@@ -3,9 +3,9 @@
 from collections.abc import Sequence
 from dataclasses import dataclass
 
-from app.core.errors import DomainError
-from app.domain.history_window import WeightedMatch
-from app.domain.league_averages import LeagueAverages
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.history_window import WeightedMatch
+from bet_researcher.domain.league_averages import LeagueAverages
 
 DEFAULT_SHRINKAGE_GAMES = 5.0
 AVERAGE_RATING = 1.0

@@ -5,7 +5,7 @@ from datetime import UTC, datetime, timedelta
 
 import pytest
 
-from app.domain.match_record import MatchRecord
+from bet_researcher.domain.match_record import MatchRecord
 
 BASE_KICKOFF = datetime(2026, 11, 1, 15, 30, tzinfo=UTC)
 

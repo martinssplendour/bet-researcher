@@ -4,8 +4,8 @@ from datetime import datetime
 
 import pytest
 
-from app.core.errors import DomainError
-from app.domain.match_record import MatchRecord
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.match_record import MatchRecord
 
 pytestmark = pytest.mark.unit
 

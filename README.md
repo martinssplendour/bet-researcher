@@ -77,7 +77,7 @@ Run from `apps/engine`:
 | Lint | `python -m uv run ruff check .` |
 | Format | `python -m uv run ruff format .` |
 | Type check | `python -m uv run mypy` |
-| Security scan | `python -m uv run bandit -r app` |
+| Security scan | `python -m uv run bandit -r src` |
 
 ## Architecture
 

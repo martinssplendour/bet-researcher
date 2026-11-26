@@ -1,7 +1,7 @@
 import pytest
 
-from app.core.errors import ConfigurationError
-from app.core.settings import load_settings
+from bet_researcher.core.errors import ConfigurationError
+from bet_researcher.core.settings import load_settings
 
 pytestmark = pytest.mark.unit
 

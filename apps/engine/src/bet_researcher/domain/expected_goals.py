@@ -3,9 +3,9 @@
 import math
 from dataclasses import dataclass
 
-from app.core.errors import DomainError
-from app.domain.league_averages import LeagueAverages
-from app.domain.team_ratings import TeamRating
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.league_averages import LeagueAverages
+from bet_researcher.domain.team_ratings import TeamRating
 
 DEFAULT_ADJUSTMENT_FLOOR = 0.7
 DEFAULT_ADJUSTMENT_CEILING = 1.3

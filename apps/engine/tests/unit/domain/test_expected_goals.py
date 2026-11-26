@@ -2,15 +2,15 @@ import math
 
 import pytest
 
-from app.core.errors import DomainError
-from app.domain.expected_goals import (
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.expected_goals import (
     AdjustmentBounds,
     ExpectedGoals,
     apply_adjustment,
     baseline_expected_goals,
 )
-from app.domain.league_averages import LeagueAverages
-from app.domain.team_ratings import TeamRating
+from bet_researcher.domain.league_averages import LeagueAverages
+from bet_researcher.domain.team_ratings import TeamRating
 
 pytestmark = pytest.mark.unit
 

@@ -12,8 +12,8 @@ from dataclasses import dataclass
 from datetime import datetime
 from enum import IntEnum
 
-from app.core.errors import DomainError
-from app.domain.match_record import MatchRecord, require_timezone
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.match_record import MatchRecord, require_timezone
 
 DEFAULT_WINDOW_SIZE = 12
 

@@ -2,8 +2,8 @@ from typing import Any
 
 import pytest
 
-from app.core.errors import DomainError
-from app.domain.selections import Market, Selection
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.selections import Market, Selection
 
 pytestmark = pytest.mark.unit
 

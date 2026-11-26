@@ -1,7 +1,7 @@
 import pytest
 
-from app.core.errors import DomainError
-from app.domain.ticket import TicketEntry, summarize_ticket
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.ticket import TicketEntry, summarize_ticket
 
 pytestmark = pytest.mark.unit
 

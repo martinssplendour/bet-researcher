@@ -1,10 +1,10 @@
 import pytest
 
-from app.core.errors import DomainError
-from app.domain.expected_goals import ExpectedGoals
-from app.domain.market_probabilities import joint_probability, selection_probability
-from app.domain.scoreline_model import build_scoreline_table
-from app.domain.selections import Market, Selection
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.expected_goals import ExpectedGoals
+from bet_researcher.domain.market_probabilities import joint_probability, selection_probability
+from bet_researcher.domain.scoreline_model import build_scoreline_table
+from bet_researcher.domain.selections import Market, Selection
 
 pytestmark = pytest.mark.unit
 

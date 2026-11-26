@@ -4,8 +4,8 @@ import math
 from collections.abc import Sequence
 from dataclasses import dataclass
 
-from app.core.errors import DomainError
-from app.domain.match_record import MatchRecord
+from bet_researcher.core.errors import DomainError
+from bet_researcher.domain.match_record import MatchRecord
 
 FULL_WEIGHT_ROUNDS = 6
 

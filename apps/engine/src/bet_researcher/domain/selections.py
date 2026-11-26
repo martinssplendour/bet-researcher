@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from enum import StrEnum
 from typing import assert_never
 
-from app.core.errors import DomainError
+from bet_researcher.core.errors import DomainError
 
 
 class Market(StrEnum):

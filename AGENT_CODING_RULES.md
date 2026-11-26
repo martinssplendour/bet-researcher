@@ -15,7 +15,7 @@ Instructions for AI coding agents and human contributors. Adapted from `senior-p
 ## Where Code Goes (engine)
 
 ```text
-apps/engine/app/
+apps/engine/src/bet_researcher/
 |-- core/           settings, logging, error types
 |-- domain/         pure maths and rules: no I/O, no network, no database
 |-- integrations/   API-Football and Gemini clients only
