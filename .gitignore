@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Node
+node_modules/
+.next/
+out/
+.turbo/
+*.tsbuildinfo
+playwright-report/
+test-results/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+
+# Local data
+*.log
+*.sqlite
+*.db
+data/raw/
+data/processed/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

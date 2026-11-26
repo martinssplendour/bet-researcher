@@ -1,0 +1,25 @@
+# App
+APP_ENV=development
+APP_NAME=project-name
+APP_PORT=8000
+LOG_LEVEL=info
+
+# Database
+DATABASE_URL=
+
+# Auth
+AUTH_SECRET=
+JWT_ISSUER=
+JWT_AUDIENCE=
+
+# External Services
+API_BASE_URL=
+API_KEY=
+
+# Storage
+STORAGE_BUCKET=
+STORAGE_REGION=
+
+# Feature Flags
+FEATURE_EXAMPLE=false
+

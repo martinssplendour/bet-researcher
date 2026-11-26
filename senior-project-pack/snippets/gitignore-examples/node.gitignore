@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+.next/
+.nuxt/
+coverage/
+.turbo/
+.cache/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+

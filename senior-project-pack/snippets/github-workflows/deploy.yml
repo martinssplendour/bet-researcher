@@ -1,0 +1,26 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build artifact
+        run: |
+          echo "Build artifact here"
+
+      - name: Deploy
+        run: |
+          echo "Deploy command here"
+
+      - name: Post-deploy check
+        run: |
+          echo "Run smoke check here"
+
