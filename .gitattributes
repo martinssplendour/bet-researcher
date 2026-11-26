@@ -1,0 +1,11 @@
+# Store and check out text files with LF line endings on every OS,
+# so Windows and Linux (CI, Docker) see identical files.
+* text=auto eol=lf
+
+# Binary files: never convert.
+*.docx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.woff2 binary
