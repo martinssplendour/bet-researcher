@@ -230,7 +230,7 @@ The scout and the analyst are separate calls so that each output can be checked 
 
 52. **Re-run the analysis** when confirmed lineups arrive, when important news lands, and once a day.
 53. **Alert users** who have that match on a ticket whenever its verdict changes.
-54. **Save every analysis:** the fact sheet, news findings, Gemini's multipliers and reasons, final numbers, chances, and later the actual result.
+54. **Save every analysis:** the fact sheet, news findings, Gemini's multipliers and reasons, final numbers, chances, the model version and calculation time, and later the actual result.
 55. **Check accuracy regularly.** Do our "60%" predictions win about 60% of the time? Are we closer to the results than the bookmaker? Adjust the *(tunable)* numbers based on the answers.
 
 ---
@@ -288,7 +288,7 @@ K. Ticket
 
 ## Known limits (for later)
 
-- **Strength of opponents isn't adjusted for.** A team whose last 12 games were mostly against weak sides will look stronger than it is. A later version can adjust each game for the opponent's quality.
+- **Strength of opponents isn't adjusted for.** A team whose last 12 games were mostly against weak sides will look stronger than it is. Planned fix (ratings v2): fit every team's attack, defence and home advantage together across the league by maximum likelihood, with the Dixon-Coles correction for low scores. That accounts for opponent strength automatically. It replaces the v1 ratings only if back-testing shows it predicts better.
 - **Cup games against lower-league teams** can inflate goal numbers. Their lower weight (0.7) softens this but doesn't remove it.
 - **Champions League and other cross-league games:** the teams' ratings come from different leagues, so they need a league-strength adjustment (for example using ClubElo). Not in v1.
 - **xG instead of goals** in steps 13–14 would give steadier ratings. Later.

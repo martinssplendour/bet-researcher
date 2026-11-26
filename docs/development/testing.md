@@ -12,7 +12,7 @@
 | Level | Where | What | Marker |
 | --- | --- | --- | --- |
 | Unit | `apps/engine/tests/unit/` | Domain maths and rules; settings. No I/O. | `unit` |
-| Integration | `apps/engine/tests/integration/` | API-Football and Gemini clients against recorded responses (respx); repositories against SQLite | `integration` |
+| Integration | `apps/engine/tests/integration/` | API-Football and Gemini clients against recorded responses (respx); repositories against PostgreSQL (Docker) | `integration` |
 | Evaluation | `apps/engine/tests/evals/` | Gemini prompt behaviour on fixed fact sheets (later) | `eval` |
 | E2E | `apps/web` (Playwright) | Paste ticket → analysing → results (later) | n/a |
 

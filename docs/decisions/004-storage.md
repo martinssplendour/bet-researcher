@@ -1,24 +1,28 @@
-# ADR 004: Storage
+# ADR 004: Storage (PostgreSQL)
 
 ## Status
 
-Accepted (26 Nov 2026)
+Accepted (26 Nov 2026). Replaces the earlier choice of SQLite for local development.
 
 ## Context
 
-The engine stores fetched match data (to save API requests), analysis jobs and their progress, and every analysis for the track record.
+The engine stores fixtures and results, team and player statistics, injuries, predicted and confirmed lineups, odds snapshots, every prediction with its model version and inputs, final outcomes for back-testing, and analysis jobs. Background workers will write at the same time as the API.
 
 ## Decision
 
-SQLAlchemy 2 with Alembic migrations. SQLite for local development, Postgres in production. The database is chosen by `DATABASE_URL`.
+PostgreSQL everywhere:
+
+- **Local:** Postgres 17 from `docker-compose.yml`, bound to localhost only.
+- **Production:** managed Postgres, chosen in the hosting decision record.
+- **Access:** SQLAlchemy 2 (async, psycopg 3) with Alembic migrations. `DATABASE_URL` is required; the engine will not start without it.
 
 ## Consequences
 
-- Better: no setup needed locally. Moving to Postgres is a configuration change.
-- Worse: SQLite has limited concurrent writes; fine for one developer, not for production traffic.
-- Know: all database access goes through `repositories/`. Queries use the ORM or bound parameters, never string building.
+- Better: development matches production. Concurrent writes work. JSONB can hold raw API payloads and analysis inputs.
+- Worse: Docker is needed for local development.
+- Know: all database access goes through `repositories/`. Each concurrent task uses its own session, because async SQLAlchemy sessions must not be shared between tasks. Queries use the ORM or bound parameters, never string building.
 
 ## Alternatives Considered
 
-- Postgres from day one (Docker): more realistic, but extra setup before any feature exists.
-- JSON files: no migrations, no queries; outgrown quickly.
+- SQLite for development: no setup, but development drifts from production and concurrent writes fail once workers exist.
+- JSON files: no migrations or queries; outgrown quickly.

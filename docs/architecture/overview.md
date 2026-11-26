@@ -20,7 +20,7 @@ A user submits a ticket (text or bet slip image). The engine reads the picks, an
       | match data    |      | news search, analyst|
       +---------------+      | slip image reading  |
                              +---------------------+
-                   Database: SQLite (dev), Postgres (prod)
+                   Database: PostgreSQL (Docker locally, managed in production)
 ```
 
 ## Request lifecycle (one ticket)
@@ -57,5 +57,6 @@ A user submits a ticket (text or bet slip image). The engine reads the picks, an
 ## Trade-offs accepted
 
 - **Two languages** (Python engine, TypeScript web): better maths and AI tooling, at the cost of two toolchains.
-- **No job queue in v1:** asyncio tasks plus a jobs table. Add a queue when traffic needs it.
+- **No job queue in v1:** ticket analysis runs as asyncio tasks with a jobs table. Scheduled work (lineup polling, imports, settling) gets a worker and Redis when it is built ([ADR 005](../decisions/005-background-jobs.md)).
+- **Modular monolith:** one web app, one Python app, one worker, one database, until real usage proves otherwise.
 - **Poisson independence:** slightly under-predicts low draws; Dixon-Coles correction later.
