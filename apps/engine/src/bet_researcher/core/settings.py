@@ -14,7 +14,6 @@ from bet_researcher.core.errors import ConfigurationError
 
 REPO_ROOT = Path(__file__).resolve().parents[5]
 DEFAULT_ENV_FILE = REPO_ROOT / ".env"
-DEFAULT_DATABASE_URL = "sqlite:///./bet_researcher.db"
 DEFAULT_API_FOOTBALL_BASE_URL = "https://v3.football.api-sports.io"
 
 AppEnv = Literal["development", "test", "production"]
@@ -28,7 +27,7 @@ class Settings(BaseSettings):
 
     app_env: AppEnv = "development"
     log_level: LogLevel = "INFO"
-    database_url: str = DEFAULT_DATABASE_URL
+    database_url: str
     api_football_key: SecretStr
     api_football_base_url: str = DEFAULT_API_FOOTBALL_BASE_URL
     gemini_api_key: SecretStr

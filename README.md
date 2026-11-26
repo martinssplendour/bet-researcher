@@ -35,14 +35,14 @@ senior-project-pack/    Reference standards this project follows
 
 ## Local Setup
 
-Prerequisites: Python 3.12+, git, and uv (`python -m pip install --user uv`).
+Prerequisites: Python 3.12+, git, Docker, and uv (`python -m pip install --user uv`).
 
 ```bash
+cp .env.example .env          # then fill in the API keys; never commit .env
+docker compose up -d          # local PostgreSQL on localhost:5432
 cd apps/engine
 python -m uv sync
 ```
-
-Then copy `.env.example` to `.env` in the repository root and fill in the keys. Never commit `.env`.
 
 ## Environment Variables
 
@@ -50,7 +50,8 @@ Then copy `.env.example` to `.env` in the repository root and fill in the keys. 
 | --- | --- | --- |
 | `APP_ENV` | no | `development`, `test` or `production` (default `development`) |
 | `LOG_LEVEL` | no | `DEBUG`, `INFO`, `WARNING` or `ERROR` (default `INFO`) |
-| `DATABASE_URL` | no | Database connection (default: local SQLite file) |
+| `DATABASE_URL` | yes | PostgreSQL connection used by the engine |
+| `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`, `POSTGRES_PORT` | for local dev | Used by `docker-compose.yml` to create the local database |
 | `API_FOOTBALL_KEY` | yes | API-Football key |
 | `API_FOOTBALL_BASE_URL` | no | API-Football base URL |
 | `GEMINI_API_KEY` | yes | Google Gemini key |

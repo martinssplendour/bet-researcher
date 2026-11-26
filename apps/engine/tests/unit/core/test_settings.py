@@ -1,16 +1,21 @@
 import pytest
 
 from bet_researcher.core.errors import ConfigurationError
-from bet_researcher.core.settings import load_settings
+from bet_researcher.core.settings import REPO_ROOT, load_settings
 
 pytestmark = pytest.mark.unit
 
 REQUIRED = {
+    "DATABASE_URL": "postgresql+psycopg://user:pass@localhost:5432/test_db",
     "API_FOOTBALL_KEY": "test-football-key",
     "GEMINI_API_KEY": "test-gemini-key",
     "GEMINI_MODEL": "test-model",
 }
-OPTIONAL = ("APP_ENV", "LOG_LEVEL", "DATABASE_URL", "API_FOOTBALL_BASE_URL")
+OPTIONAL = ("APP_ENV", "LOG_LEVEL", "API_FOOTBALL_BASE_URL")
+
+
+def test_repo_root_points_at_the_repository() -> None:
+    assert (REPO_ROOT / ".env.example").is_file()
 
 
 @pytest.fixture
@@ -43,6 +48,7 @@ def test_missing_keys_fail_fast_without_leaking_values(clean_env: pytest.MonkeyP
         load_settings(env_file=None)
 
     message = str(error.value)
+    assert "DATABASE_URL" in message
     assert "API_FOOTBALL_KEY" in message
     assert "GEMINI_MODEL" in message
     assert "super-secret-value" not in message
